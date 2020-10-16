@@ -21,7 +21,12 @@ let Ap
 let Monad
     : (Type → Type) → Type
     = λ(m : Type → Type) →
-        { bind : Bind m, return : Unit m, map : Map m, ap : Ap m }
+        { bind : Bind m
+        , return : Unit m
+        , map : Map m
+        , ap : Ap m
+        , join : Join m
+        }
 
 let Function
     : Type → Type → Type

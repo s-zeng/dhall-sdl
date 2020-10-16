@@ -26,7 +26,7 @@ let makeMonad
                   fs
                   (λ(f : a → b) → bind a b xs (λ(x : a) → return b (f x)))
 
-        in  { return, map, bind, ap }
+        in  { return, map, bind, ap, join }
 
 let makeMonad3 =
       λ(m : Type → Type → Type) →
@@ -143,7 +143,8 @@ let eMonad
     = makeMonad3 t.Either eunit emap ejoin
 
 let monads =
-      { t = { Function = funcMonad } ∧ { Either = eMonad }
+      { Function = funcMonad
+      , Either = eMonad
       , Optional = optMonad
       , List = listMonad
       }
