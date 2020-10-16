@@ -114,13 +114,7 @@ let funcunit
 
 let funcmap
     : ∀(r : Type) → t.Map (t.Function r)
-    = λ(r : Type) →
-      λ(a : Type) →
-      λ(b : Type) →
-      λ(f : a → b) →
-      λ(g : r → a) →
-      λ(x : r) →
-        f (g x)
+    = h.compose
 
 let funcjoin
     : ∀(r : Type) → t.Join (t.Function r)
