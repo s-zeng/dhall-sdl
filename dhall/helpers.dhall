@@ -1,11 +1,3 @@
-let id
-    : ∀(x : Type) → x → x
-    = λ(t : Type) → λ(x : t) → x
-
-let const
-    : ∀(b : Type) → ∀(a : Type) → a → b → a
-    = λ(r : Type) → λ(a : Type) → λ(x : a) → λ(y : r) → x
-
 let compose
     : ∀(r : Type) → ∀(a : Type) → ∀(b : Type) → (a → b) → (r → a) → r → b
     = λ(r : Type) →
@@ -15,6 +7,14 @@ let compose
       λ(g : r → a) →
       λ(x : r) →
         f (g x)
+
+let id
+    : ∀(x : Type) → x → x
+    = λ(t : Type) → λ(x : t) → x
+
+let const
+    : ∀(b : Type) → ∀(a : Type) → a → b → a
+    = λ(r : Type) → λ(a : Type) → λ(x : a) → λ(y : r) → x
 
 let fac
     : ∀(n : Natural) → Natural
